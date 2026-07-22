@@ -13,7 +13,12 @@ function TravelingKnight(startPos, endPos) {
   const isValidPos = ([x, y]) => {
     return x >= 0 && y >= 0 && x < 8 && y < 8;
   };
-
+  if (isValidPos(startPos) === false) {
+    return "not a valid start position";
+  }
+  if (isValidPos(endPos) === false) {
+    return "not a valid end position";
+  }
   const toKey = ([x, y]) => {
     return `${x},${y}`;
   };
@@ -52,4 +57,4 @@ function TravelingKnight(startPos, endPos) {
   console.log(visited);
 }
 
-console.log(TravelingKnight([0, 0], [7, 7]));
+console.log(TravelingKnight([0, 0], [-2, -2]));
